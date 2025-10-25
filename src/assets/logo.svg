@@ -1,0 +1,53 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle with gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.6" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <circle cx="100" cy="100" r="95" fill="url(#bgGradient)"/>
+  
+  <!-- NFC waves (3 curved lines representing signal) -->
+  <path d="M 70 100 Q 80 80, 100 80 Q 120 80, 130 100" 
+        stroke="url(#waveGradient)" 
+        stroke-width="6" 
+        fill="none" 
+        stroke-linecap="round"/>
+  
+  <path d="M 55 100 Q 70 65, 100 65 Q 130 65, 145 100" 
+        stroke="url(#waveGradient)" 
+        stroke-width="5" 
+        fill="none" 
+        stroke-linecap="round"
+        opacity="0.7"/>
+  
+  <path d="M 40 100 Q 60 50, 100 50 Q 140 50, 160 100" 
+        stroke="url(#waveGradient)" 
+        stroke-width="4" 
+        fill="none" 
+        stroke-linecap="round"
+        opacity="0.5"/>
+  
+  <!-- Phone/card icon at bottom -->
+  <rect x="75" y="110" width="50" height="70" rx="5" fill="white" opacity="0.95"/>
+  <rect x="80" y="115" width="40" height="50" rx="2" fill="#667eea" opacity="0.3"/>
+  
+  <!-- NFC chip symbol on card -->
+  <circle cx="100" cy="140" r="8" fill="none" stroke="#764ba2" stroke-width="2"/>
+  <circle cx="100" cy="140" r="4" fill="none" stroke="#764ba2" stroke-width="2"/>
+  <line x1="108" y1="140" x2="115" y2="140" stroke="#764ba2" stroke-width="2"/>
+  <line x1="100" y1="132" x2="100" y2="125" stroke="#764ba2" stroke-width="2"/>
+  
+  <!-- Decorative dots -->
+  <circle cx="100" cy="165" r="2" fill="#667eea"/>
+  <circle cx="95" cy="170" r="1.5" fill="#667eea" opacity="0.6"/>
+  <circle cx="105" cy="170" r="1.5" fill="#667eea" opacity="0.6"/>
+</svg>

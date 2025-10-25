@@ -1,0 +1,31 @@
+@if (!(isPwa() && nfcSupported())) {
+<app-pwa-warning />
+} @else {
+<main class="container">
+  <app-header [version]="version()"></app-header>
+
+  @if (showAddModal()) {
+  <app-add-tag-modal (saved)="onSaved($event)" (closed)="closeAddModal()"></app-add-tag-modal>
+  }
+
+  @if (showUseModal()) {
+  <app-use-tag-modal [id]="selectedId()!" [name]="selectedTag()!.name" [tag]="selectedTag()!.tag"
+    (closed)="closeUseModal()"></app-use-tag-modal>
+  }
+
+  @if (showDeleteModal()) {
+  <app-confirm-delete-modal [id]="selectedId()!" (closed)="onDeleteClosed()"
+    (confirmed)="onDeleteConfirmed()"></app-confirm-delete-modal>
+  }
+
+  <section class="list">
+    @for (tag of tags(); track tag.id) {
+    <app-card [id]="tag.id" [name]="tag.name" (use)="onUseRequest($event)"
+      (delete)="onDeleteRequest($event)"></app-card>
+    }
+  </section>
+
+  <app-footer [buildTime]="buildTime()" [buildHash]="buildHash()" [updateAvailable]="updateAvailable()"
+    [installingUpdate]="installingUpdate()" (update)="applyUpdate()" (add)="onAdd()" />
+</main>
+}

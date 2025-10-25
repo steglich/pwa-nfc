@@ -1,0 +1,9 @@
+:host { display: block; }
+.container { padding-top: 56px; padding-bottom: 72px; }
+.list { display: grid; grid-template-columns: 1fr; gap: 8px; }
+.update-banner { padding: 8px; background: #fff3cd; border: 1px solid #ffeeba; border-radius: 8px; margin-top: 12px; }
+
+/* Mobile-first only */
+@media (min-width: 600px) {
+  .container { max-width: 420px; margin: 0 auto; }
+}
